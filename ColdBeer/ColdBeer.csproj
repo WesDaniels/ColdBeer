@@ -32,6 +32,10 @@
   </PropertyGroup>
   <Import Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
   <ItemGroup>
+    <Compile Include="Components\IMotor.cs" />
+    <Compile Include="Components\Motor.cs" />
+    <Compile Include="Controllers\ThrottledMotor.cs" />
+    <Compile Include="Enums\OneDirection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
   </ItemGroup>

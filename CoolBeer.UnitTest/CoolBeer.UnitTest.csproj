@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CoolBeer.UnitTest</RootNamespace>
     <AssemblyName>CoolBeer.UnitTest</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,7 +30,16 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.SPOT.Hardware">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft .NET Micro Framework\v4.3\Assemblies\le\Microsoft.SPOT.Hardware.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SPOT.Hardware.PWM">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft .NET Micro Framework\v4.3\Assemblies\le\Microsoft.SPOT.Hardware.PWM.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -40,7 +50,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="..\ColdBeer\Components\IMotor.cs">
+      <Link>Links\IMotor.cs</Link>
+    </Compile>
+    <Compile Include="..\ColdBeer\Components\Motor.cs">
+      <Link>Links\Motor.cs</Link>
+    </Compile>
+    <Compile Include="..\ColdBeer\Controllers\ThrottledMotor.cs">
+      <Link>Links\ThrottledMotor.cs</Link>
+    </Compile>
+    <Compile Include="..\ColdBeer\Enums\OneDirection.cs">
+      <Link>Links\OneDirection.cs</Link>
+    </Compile>
+    <Compile Include="ThrottledMotor_Tests\Faux_Motor.cs" />
+    <Compile Include="Motor_Tests\Motor_Test.cs" />
+    <Compile Include="ThrottledMotor_Tests\ThrottledMotor_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
