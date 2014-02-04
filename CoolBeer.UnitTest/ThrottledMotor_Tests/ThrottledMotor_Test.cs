@@ -50,7 +50,7 @@ namespace CoolBeer.UnitTest.ThrottledMotor_Test.cs
             Faux_Motor _fauxMotor = new Faux_Motor();
             ThrottledMotor _throttledMotor = new ThrottledMotor(_fauxMotor);
 
-            // no matter how many times we go forward, max is 100 exception never gets throw
+            // cross back and forth inbetween reverse and forawrd, hopefully cause no errors
             for (int i = 0; i < 3; i++)
             {
                 _throttledMotor.Reverse();
