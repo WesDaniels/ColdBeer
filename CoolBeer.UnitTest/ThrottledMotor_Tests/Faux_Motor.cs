@@ -4,7 +4,7 @@ using Microsoft.SPOT.Hardware;
 using System;
 using System.Collections.Generic;
 
-namespace CoolBeer.UnitTest.ThrottledMotor_Tests
+namespace CoolBeer.Emulator.ThrottledMotor_Tests
 {
     class Faux_Motor : IMotor
     {

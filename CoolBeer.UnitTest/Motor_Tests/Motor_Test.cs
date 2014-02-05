@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace CoolBeer.UnitTest.Motor_Tests
+namespace CoolBeer.Emulator.Motor_Tests
 {
     [TestClass]
     public class Motor_Test
@@ -12,7 +12,7 @@ namespace CoolBeer.UnitTest.Motor_Tests
         public void Motor_Runs_At_0()
         {
             IMotor _motor = new Motor();
-            _motor.SetSpeed(0);
+            _motor.SetSpeed(100);
         }
 
         [TestMethod,

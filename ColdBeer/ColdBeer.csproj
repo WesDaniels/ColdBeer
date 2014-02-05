@@ -34,6 +34,7 @@
   <ItemGroup>
     <Compile Include="Components\IMotor.cs" />
     <Compile Include="Components\Motor.cs" />
+    <Compile Include="Controllers\DriveTrain.cs" />
     <Compile Include="Controllers\ThrottledMotor.cs" />
     <Compile Include="Enums\OneDirection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

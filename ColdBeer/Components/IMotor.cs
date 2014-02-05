@@ -3,7 +3,7 @@ using Microsoft.SPOT.Hardware;
 
 namespace ColdBeer.Components
 {
-    interface IMotor
+    public interface IMotor
     {
         void SetSpeed(int percent);
 

@@ -1,12 +1,12 @@
 ﻿using ColdBeer.Controllers;
-using CoolBeer.UnitTest.ThrottledMotor_Tests;
+using CoolBeer.Emulator.ThrottledMotor_Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace CoolBeer.UnitTest.ThrottledMotor_Test.cs
+namespace CoolBeer.Emulator.ThrottledMotor_Test.cs
 {
     [TestClass]
-    public class Motor_Test
+    public class ThrottledMotor_Test
     {
         [TestMethod]
         public void Throttled_Motor_Max_Speed_Limited_To_100()

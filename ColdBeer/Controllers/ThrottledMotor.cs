@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace ColdBeer.Controllers
 {
-    class ThrottledMotor
+    public class ThrottledMotor
     {
         private IMotor _motor;
         private int _speedStep = 10;
@@ -101,13 +101,13 @@ namespace ColdBeer.Controllers
         // increase the speed of the engine by 1 unit
         public void Forward()
         {
-            if (direction == OneDirection.Stopped)
-            {
-                direction = OneDirection.Forwards;
-            }
-
             for (int i = 1; i < _speedStep; i++)
             {
+                if (direction == OneDirection.Stopped)
+                {
+                    direction = OneDirection.Forwards;
+                }
+
                 speed = speed + signedUnit >= 0 & speed + signedUnit <= 100 ? speed + signedUnit : speed;
                 Thread.Sleep(5);
             }
@@ -116,13 +116,13 @@ namespace ColdBeer.Controllers
         // decrease the speed of the engine by 1 unit
         public void Reverse()
         {
-            if (direction == OneDirection.Stopped)
-            {
-                direction = OneDirection.Backwards;
-            }
-
             for (int i = 1; i < _speedStep; i++)
             {
+                if (direction == OneDirection.Stopped)
+                {
+                    direction = OneDirection.Backwards;
+                }
+
                 speed = speed - signedUnit >= 0 & speed - signedUnit <= 100 ? speed - signedUnit : speed;
                 Thread.Sleep(5);
             }
