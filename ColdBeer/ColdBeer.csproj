@@ -34,12 +34,15 @@
   <ItemGroup>
     <Compile Include="Classes\PacketList.cs" />
     <Compile Include="Classes\MessageList.cs" />
+    <Compile Include="Classes\PingList\IPingList.cs" />
+    <Compile Include="Classes\PingList\PingList.cs" />
     <Compile Include="Components\Motor\IMotor.cs" />
     <Compile Include="Components\Ping\IPing.cs" />
     <Compile Include="Components\Motor\Motor.cs" />
     <Compile Include="Components\Ping\HC_SR04.cs" />
     <Compile Include="Components\Ping\Ping.cs" />
     <Compile Include="Controllers\DriveTrain.cs" />
+    <Compile Include="Utilities\MessageFactory\MessageFactory.cs" />
     <Compile Include="Controllers\PingStream.cs" />
     <Compile Include="Controllers\ThrottledMotor.cs" />
     <Compile Include="Enums\OneDirection.cs" />
@@ -58,6 +61,7 @@
     <Reference Include="SecretLabs.NETMF.Hardware" />
     <Reference Include="SecretLabs.NETMF.Hardware.Netduino" />
     <Reference Include="System" />
+    <Reference Include="System.Text.RegularExpressions" />
   </ItemGroup>
   <ItemGroup />
 </Project>

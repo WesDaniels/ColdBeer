@@ -59,6 +59,12 @@
     <Compile Include="..\ColdBeer\Classes\PacketList.cs">
       <Link>Links\PacketList.cs</Link>
     </Compile>
+    <Compile Include="..\ColdBeer\Classes\PingList\IPingList.cs">
+      <Link>Links\IPingList.cs</Link>
+    </Compile>
+    <Compile Include="..\ColdBeer\Classes\PingList\PingList.cs">
+      <Link>Links\PingList.cs</Link>
+    </Compile>
     <Compile Include="..\ColdBeer\Components\Motor\IMotor.cs">
       <Link>Links\IMotor.cs</Link>
     </Compile>
@@ -87,9 +93,15 @@
     <Compile Include="..\ColdBeer\Utilities\MessageBuilder.cs">
       <Link>Links\MessageBuilder.cs</Link>
     </Compile>
+    <Compile Include="..\ColdBeer\Utilities\MessageFactory\MessageFactory.cs">
+      <Link>Links\MessageFactory.cs</Link>
+    </Compile>
     <Compile Include="..\ColdBeer\Utilities\Toolbox.cs">
       <Link>Links\Toolbox.cs</Link>
     </Compile>
+    <Compile Include="MessageFactory_Test\Faux_PingList.cs" />
+    <Compile Include="MessageFactory_Test\MessageFactory_Test.cs" />
+    <Compile Include="PingList_Test\PingList_Test.cs" />
     <Compile Include="PingStream_Test\Faux_Write_Ping.cs" />
     <Compile Include="PingStream_Test\Faux_Read_Ping.cs" />
     <Compile Include="PingStream_Test\PingStream_Write_Test.cs" />
@@ -114,6 +126,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

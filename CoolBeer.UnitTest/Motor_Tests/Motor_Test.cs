@@ -12,7 +12,7 @@ namespace CoolBeer.Emulator.Motor_Tests
         public void Motor_Runs_At_0()
         {
             IMotor _motor = new Motor();
-            _motor.SetSpeed(100);
+            _motor.SetSpeed(0);
         }
 
         [TestMethod,
