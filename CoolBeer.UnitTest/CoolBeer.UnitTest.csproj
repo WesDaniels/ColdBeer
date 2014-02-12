@@ -53,14 +53,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\ColdBeer\Components\IMotor.cs">
+    <Compile Include="..\ColdBeer\Classes\MessageList.cs">
+      <Link>Links\MessageList.cs</Link>
+    </Compile>
+    <Compile Include="..\ColdBeer\Classes\PacketList.cs">
+      <Link>Links\PacketList.cs</Link>
+    </Compile>
+    <Compile Include="..\ColdBeer\Components\Motor\IMotor.cs">
       <Link>Links\IMotor.cs</Link>
     </Compile>
-    <Compile Include="..\ColdBeer\Components\Motor.cs">
+    <Compile Include="..\ColdBeer\Components\Motor\Motor.cs">
       <Link>Links\Motor.cs</Link>
+    </Compile>
+    <Compile Include="..\ColdBeer\Components\Ping\IPing.cs">
+      <Link>Links\IPing.cs</Link>
     </Compile>
     <Compile Include="..\ColdBeer\Controllers\DriveTrain.cs">
       <Link>Links\DriveTrain.cs</Link>
+    </Compile>
+    <Compile Include="..\ColdBeer\Controllers\PingStream.cs">
+      <Link>Links\PingStream.cs</Link>
     </Compile>
     <Compile Include="..\ColdBeer\Controllers\ThrottledMotor.cs">
       <Link>Links\ThrottledMotor.cs</Link>
@@ -69,6 +81,19 @@
     <Compile Include="..\ColdBeer\Enums\OneDirection.cs">
       <Link>Links\OneDirection.cs</Link>
     </Compile>
+    <Compile Include="..\ColdBeer\Enums\Packet.cs">
+      <Link>Links\Packet.cs</Link>
+    </Compile>
+    <Compile Include="..\ColdBeer\Utilities\MessageBuilder.cs">
+      <Link>Links\MessageBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\ColdBeer\Utilities\Toolbox.cs">
+      <Link>Links\Toolbox.cs</Link>
+    </Compile>
+    <Compile Include="PingStream_Test\Faux_Write_Ping.cs" />
+    <Compile Include="PingStream_Test\Faux_Read_Ping.cs" />
+    <Compile Include="PingStream_Test\PingStream_Write_Test.cs" />
+    <Compile Include="PingStream_Test\PingStream_Read_Test.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -78,6 +103,7 @@
     <Compile Include="Motor_Tests\Motor_Test.cs" />
     <Compile Include="ThrottledMotor_Tests\ThrottledMotor_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Toolbox_Text\Toolbox_Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

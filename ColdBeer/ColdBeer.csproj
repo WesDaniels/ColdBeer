@@ -32,13 +32,22 @@
   </PropertyGroup>
   <Import Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
   <ItemGroup>
-    <Compile Include="Components\IMotor.cs" />
-    <Compile Include="Components\Motor.cs" />
+    <Compile Include="Classes\PacketList.cs" />
+    <Compile Include="Classes\MessageList.cs" />
+    <Compile Include="Components\Motor\IMotor.cs" />
+    <Compile Include="Components\Ping\IPing.cs" />
+    <Compile Include="Components\Motor\Motor.cs" />
+    <Compile Include="Components\Ping\HC_SR04.cs" />
+    <Compile Include="Components\Ping\Ping.cs" />
     <Compile Include="Controllers\DriveTrain.cs" />
+    <Compile Include="Controllers\PingStream.cs" />
     <Compile Include="Controllers\ThrottledMotor.cs" />
     <Compile Include="Enums\OneDirection.cs" />
+    <Compile Include="Enums\Packet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Utilities\MessageBuilder.cs" />
+    <Compile Include="Utilities\Toolbox.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.SPOT.Hardware" />
@@ -50,4 +59,5 @@
     <Reference Include="SecretLabs.NETMF.Hardware.Netduino" />
     <Reference Include="System" />
   </ItemGroup>
+  <ItemGroup />
 </Project>

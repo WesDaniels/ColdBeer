@@ -1,4 +1,4 @@
-﻿using ColdBeer.Components;
+﻿using ColdBeer.Components.Motor;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 

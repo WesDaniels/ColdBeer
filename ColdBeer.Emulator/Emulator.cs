@@ -1,4 +1,4 @@
-﻿using ColdBeer.Components;
+﻿using ColdBeer.Components.Motor;
 using ColdBeer.Controllers;
 using CoolBeer.Emulator.Adapters;
 using System;

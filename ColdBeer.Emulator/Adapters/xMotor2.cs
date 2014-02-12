@@ -1,4 +1,4 @@
-﻿using ColdBeer.Components;
+﻿using ColdBeer.Components.Motor;
 using System;
 using System.Collections.Generic;
 using System.Linq;

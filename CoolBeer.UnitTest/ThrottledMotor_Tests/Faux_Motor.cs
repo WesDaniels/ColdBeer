@@ -1,4 +1,4 @@
-﻿using ColdBeer.Components;
+﻿using ColdBeer.Components.Motor;
 using ColdBeer.Enums;
 using Microsoft.SPOT.Hardware;
 using System;

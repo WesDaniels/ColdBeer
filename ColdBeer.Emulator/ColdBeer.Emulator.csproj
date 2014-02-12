@@ -53,7 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\ColdBeer\Components\IMotor.cs">
+    <Compile Include="..\ColdBeer\Components\Motor\IMotor.cs">
       <Link>Links\IMotor.cs</Link>
     </Compile>
     <Compile Include="..\ColdBeer\Controllers\DriveTrain.cs">

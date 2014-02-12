@@ -1,6 +1,6 @@
 using System;
 using Microsoft.SPOT;
-using ColdBeer.Components;
+using ColdBeer.Components.Motor;
 
 namespace ColdBeer.Controllers
 {
@@ -10,18 +10,6 @@ namespace ColdBeer.Controllers
         ThrottledMotor _frontRight;
         ThrottledMotor _rearLeft;
         ThrottledMotor _rearRight;
-
-        public void ConnectTwoFront(IMotor frontLeft, IMotor frontRight)
-        {
-            _frontLeft = new ThrottledMotor(frontLeft);
-            _frontRight = new ThrottledMotor(frontRight);
-        }
-
-        public void ConnectTwolRear(IMotor frontLeft, IMotor frontRight)
-        {
-            _rearLeft = new ThrottledMotor(frontLeft);
-            _rearRight = new ThrottledMotor(frontRight);
-        }
 
         public void ConnectFour(IMotor frontLeft, IMotor frontRight, IMotor rearLeft, IMotor rearRight)
         {
@@ -33,34 +21,58 @@ namespace ColdBeer.Controllers
 
         public void Forward()
         {
-            _frontLeft.Forward();
-            _frontRight.Forward();
-            _rearRight.Forward();
-            _rearLeft.Forward();
+            if (_frontRight != null & _frontLeft != null)
+            {
+                _frontLeft.Forward();
+                _frontRight.Forward();
+            }
+            if (_rearRight != null & _rearLeft != null)
+            {
+                _rearRight.Forward();
+                _rearLeft.Forward();
+            }
         }
 
         public void Right()
         {
-            _frontLeft.Forward();
-            _rearLeft.Forward();
-            _frontRight.Reverse();
-            _rearRight.Reverse();
+            if (_frontRight != null & _frontLeft != null)
+            {
+                _frontLeft.Forward();
+                _frontRight.Reverse();
+            }
+            if (_rearRight != null & _rearLeft != null)
+            {
+                _rearLeft.Forward();
+                _rearRight.Reverse();
+            }
         }
 
         public void Left()
         {
-            _frontRight.Forward();
-            _rearRight.Forward();
-            _frontLeft.Reverse();
-            _rearLeft.Reverse();
+            if (_frontRight != null & _frontLeft != null)
+            {
+                _frontRight.Forward();
+                _frontLeft.Reverse();
+            }
+            if (_rearRight != null & _rearLeft != null)
+            {
+                _rearRight.Forward();
+                _rearLeft.Reverse();
+            }
         }
 
         public void Reverse()
         {
-            _frontLeft.Reverse();
-            _frontRight.Reverse();
-            _rearLeft.Reverse();
-            _rearRight.Reverse();
+            if (_frontRight != null & _frontLeft != null)
+            {
+                _frontLeft.Reverse();
+                _frontRight.Reverse();
+            }
+            if (_rearRight != null & _rearLeft != null)
+            {
+                _rearLeft.Reverse();
+                _rearRight.Reverse();
+            }
         }
 
     }

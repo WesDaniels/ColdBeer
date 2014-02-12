@@ -1,6 +1,6 @@
 using System;
 using Microsoft.SPOT;
-using ColdBeer.Components;
+using ColdBeer.Components.Motor;
 using ColdBeer.Enums;
 using System.Threading;
 
