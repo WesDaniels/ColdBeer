@@ -53,12 +53,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\ColdBeer\Classes\MessageList.cs">
-      <Link>Links\MessageList.cs</Link>
-    </Compile>
-    <Compile Include="..\ColdBeer\Classes\PacketList.cs">
-      <Link>Links\PacketList.cs</Link>
-    </Compile>
     <Compile Include="..\ColdBeer\Classes\PingList\IPingList.cs">
       <Link>Links\IPingList.cs</Link>
     </Compile>
@@ -90,9 +84,6 @@
     <Compile Include="..\ColdBeer\Enums\Packet.cs">
       <Link>Links\Packet.cs</Link>
     </Compile>
-    <Compile Include="..\ColdBeer\Utilities\MessageBuilder.cs">
-      <Link>Links\MessageBuilder.cs</Link>
-    </Compile>
     <Compile Include="..\ColdBeer\Utilities\MessageFactory\MessageFactory.cs">
       <Link>Links\MessageFactory.cs</Link>
     </Compile>
@@ -104,8 +95,6 @@
     <Compile Include="PingList_Test\PingList_Test.cs" />
     <Compile Include="PingStream_Test\Faux_Write_Ping.cs" />
     <Compile Include="PingStream_Test\Faux_Read_Ping.cs" />
-    <Compile Include="PingStream_Test\PingStream_Write_Test.cs" />
-    <Compile Include="PingStream_Test\PingStream_Read_Test.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>

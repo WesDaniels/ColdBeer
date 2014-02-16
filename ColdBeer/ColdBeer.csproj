@@ -32,8 +32,6 @@
   </PropertyGroup>
   <Import Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
   <ItemGroup>
-    <Compile Include="Classes\PacketList.cs" />
-    <Compile Include="Classes\MessageList.cs" />
     <Compile Include="Classes\PingList\IPingList.cs" />
     <Compile Include="Classes\PingList\PingList.cs" />
     <Compile Include="Components\Motor\IMotor.cs" />
@@ -49,7 +47,6 @@
     <Compile Include="Enums\Packet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Utilities\MessageBuilder.cs" />
     <Compile Include="Utilities\Toolbox.cs" />
   </ItemGroup>
   <ItemGroup>

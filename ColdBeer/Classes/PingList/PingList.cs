@@ -5,6 +5,9 @@ using System.Text;
 
 namespace ColdBeer.Classes.PingList
 {
+    /// <summary>
+    /// List<long> - This a Collection of long's representing ticks at which a ping was received
+    /// </summary>
     public class PingList : IPingList
     {
         private ArrayList _pingTimes = new ArrayList();
