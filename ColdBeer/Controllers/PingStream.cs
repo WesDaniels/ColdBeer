@@ -30,6 +30,24 @@ namespace ColdBeer.Controllers
         }
 
         /// <summary>
+        /// Obsticle detecter
+        /// </summary>
+        /// <returns>return if echo was heard</returns>
+        public bool SendPing()
+        {
+            int pings = PingList.Length();
+            bool echo = false;
+
+            _ping.Send();
+            Thread.Sleep(3);
+
+            echo = (pings != PingList.Length());
+            Thread.Sleep(50);
+
+            return echo;
+        }
+
+        /// <summary>
         /// This gets called whenever a ping is received
         /// </summary>
         /// <param name="data1"></param>

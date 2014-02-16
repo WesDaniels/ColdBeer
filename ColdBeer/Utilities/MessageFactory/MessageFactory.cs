@@ -7,7 +7,7 @@ namespace ColdBeer.Utilities.MessageFactory
 {
     public static class MessageFactory
     {
-        public static int GetMessageCount(IPingList pingList)
+        public static int GetMessageCount(this IPingList pingList)
         {
             string stream = pingList.ToBinary(0);
             Regex regex = new Regex("0000[01]{8}0101");
@@ -16,7 +16,7 @@ namespace ColdBeer.Utilities.MessageFactory
             return mc.Count;
         }
 
-        public static string GetMessageAt(IPingList pingList, int index)
+        public static string GetMessageAt(this IPingList pingList, int index)
         {
             string stream = pingList.ToBinary(0);
             Regex regex = new Regex("0000[01]{8}0101");
