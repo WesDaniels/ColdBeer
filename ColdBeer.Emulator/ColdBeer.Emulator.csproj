@@ -36,10 +36,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.SPOT.Hardware">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft .NET Micro Framework\v4.3\Assemblies\le\Microsoft.SPOT.Hardware.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft .NET Micro Framework\v4.3\Assemblies\le\Microsoft.SPOT.Hardware.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SPOT.Hardware.PWM">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft .NET Micro Framework\v4.3\Assemblies\le\Microsoft.SPOT.Hardware.PWM.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft .NET Micro Framework\v4.3\Assemblies\le\Microsoft.SPOT.Hardware.PWM.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -53,11 +53,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\ColdBeer\Classes\PingList\IPingList.cs">
+      <Link>Links\IPingList.cs</Link>
+    </Compile>
+    <Compile Include="..\ColdBeer\Classes\PingList\PingList.cs">
+      <Link>Links\PingList.cs</Link>
+    </Compile>
     <Compile Include="..\ColdBeer\Components\Motor\IMotor.cs">
       <Link>Links\IMotor.cs</Link>
     </Compile>
+    <Compile Include="..\ColdBeer\Components\Ping\IPing.cs">
+      <Link>Links\IPing.cs</Link>
+    </Compile>
+    <Compile Include="..\ColdBeer\Controllers\Captain.cs">
+      <Link>Links\Captain.cs</Link>
+    </Compile>
     <Compile Include="..\ColdBeer\Controllers\DriveTrain.cs">
       <Link>Links\DriveTrain.cs</Link>
+    </Compile>
+    <Compile Include="..\ColdBeer\Controllers\PingStream.cs">
+      <Link>Links\PingStream.cs</Link>
     </Compile>
     <Compile Include="..\ColdBeer\Controllers\ThrottledMotor.cs">
       <Link>Links\ThrottledMotor.cs</Link>
@@ -65,10 +80,13 @@
     <Compile Include="..\ColdBeer\Enums\OneDirection.cs">
       <Link>Links\OneDirection.cs</Link>
     </Compile>
+    <Compile Include="Adapters\xPing1.cs" />
+    <Compile Include="Adapters\xPingList1.cs" />
     <Compile Include="Adapters\xMotor1.cs" />
     <Compile Include="Adapters\xMotor2.cs" />
     <Compile Include="Adapters\xMotor3.cs" />
     <Compile Include="Adapters\xMotor4.cs" />
+    <Compile Include="Adapters\xServo1.cs" />
     <Compile Include="Emulator.cs">
       <SubType>Form</SubType>
     </Compile>

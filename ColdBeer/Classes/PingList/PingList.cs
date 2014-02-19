@@ -50,12 +50,20 @@ namespace ColdBeer.Classes.PingList
         public string ToBinary(int from, int to = -1)
         {
             to = to == -1 ? _pingTimes.Count - 1 : to;
+            long elapsed;
+            long start;
+            long end;
+            long bit;
 
             StringBuilder binary = new StringBuilder();
 
             for (int i = from; i < to; i++)
             {
-                binary.Append((((long)_pingTimes[i+1] - (long)_pingTimes[i]) / 10000) - 1);
+                start = (long)_pingTimes[i];
+                end = (long)_pingTimes[i+1];
+                elapsed = (end - start);
+                bit = elapsed / 10000;
+                binary.Append(bit - 2);
             }
 
             return binary.ToString();

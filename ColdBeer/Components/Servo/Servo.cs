@@ -4,7 +4,7 @@ using Microsoft.SPOT.Hardware;
 
 namespace ColdBeer.Components.Servo
 {
-    public class Servo
+    public class Servo : IServo
     {
         /// <summary>
         /// PWM handle
@@ -19,13 +19,13 @@ namespace ColdBeer.Components.Servo
         /// <summary>
         /// Set servo inversion
         /// </summary>
-        public bool inverted = false;
+        private bool inverted = false;
 
         /// <summary>
         /// Create the PWM Channel, set it low and configure timings
         /// </summary>
         /// <param name="pin"></param>
-        public Servo(Cpu.PWMChannel channelPin)
+        public void Connect(Cpu.PWMChannel channelPin)
         {
             // Init the PWM pin
             servo = new PWM((Cpu.PWMChannel)channelPin, 20000, 1500, PWM.ScaleFactor.Microseconds, false);
@@ -47,7 +47,7 @@ namespace ColdBeer.Components.Servo
         /// </summary>
         /// <param name="fullLeft"></param>
         /// <param name="fullRight"></param>
-        public void setRange(int fullLeft, int fullRight)
+        private void setRange(int fullLeft, int fullRight)
         {
             range[1] = fullLeft;
             range[0] = fullRight;
@@ -57,15 +57,20 @@ namespace ColdBeer.Components.Servo
         /// Disengage the servo. 
         /// The servo motor will stop trying to maintain an angle
         /// </summary>
-        public void disengage()
+        private void disengage()
         {
             servo.DutyCycle = 0;
+        }
+
+        public void SetDegrees(int degree)
+        {
+            Degree = degree;
         }
 
         /// <summary>
         /// Set the servo degree
         /// </summary>
-        public double Degree
+        private double Degree
         {
             set
             {

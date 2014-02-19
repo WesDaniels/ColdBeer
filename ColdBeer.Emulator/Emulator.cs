@@ -1,5 +1,7 @@
 ﻿using ColdBeer.Components.Motor;
+using ColdBeer.Components.Ping;
 using ColdBeer.Controllers;
+using ColdBeer.Emulator.Adapters;
 using CoolBeer.Emulator.Adapters;
 using System;
 using System.Collections.Generic;
@@ -16,15 +18,14 @@ namespace CoolBeer.Emulator
     {
         public static string xMotor1_SetSpeed;
         public static string xMoter1_Direction;
-
         public static string xMotor2_SetSpeed;
         public static string xMoter2_Direction;
-
         public static string xMotor3_SetSpeed;
         public static string xMoter3_Direction;
-
         public static string xMotor4_SetSpeed;
         public static string xMoter4_Direction;
+
+        public static bool xPing1_block = false;
         
         static DriveTrain driveTrain = new DriveTrain();
 
@@ -32,6 +33,7 @@ namespace CoolBeer.Emulator
         static IMotor motor2 = new xMotor2();
         static IMotor motor3 = new xMotor3();
         static IMotor motor4 = new xMotor4();
+        
 
         public Emulator()
         {
@@ -40,7 +42,14 @@ namespace CoolBeer.Emulator
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            driveTrain.ConnectFour(motor1, motor2,motor3,motor4);
+            DriveTrain driveTrain = new DriveTrain();
+            driveTrain.ConnectFour(motor1, motor2, motor3, motor4);
+
+            IPing ping = new xPing1();
+            PingStream pingStream = new PingStream(ping);
+            pingStream.PingList = new xPingList1();
+
+            Captain captain = new Captain(driveTrain, pingStream);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -56,27 +65,11 @@ namespace CoolBeer.Emulator
 
             verticalProgressBar4.Value = int.Parse(xMotor4_SetSpeed);
             textBox3.Text = xMoter4_Direction;
- 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void cbBlocked_CheckedChanged(object sender, EventArgs e)
         {
-            driveTrain.Forward();
-        }
-
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            driveTrain.Left();
-        }
-
-        private void button4_Click_1(object sender, EventArgs e)
-        {
-            driveTrain.Right();
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            driveTrain.Reverse();
+            xPing1_block = cbBlocked.Checked;
         }
     }
 }

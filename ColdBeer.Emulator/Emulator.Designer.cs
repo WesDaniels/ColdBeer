@@ -30,32 +30,27 @@
         {
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbBlocked = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.verticalProgressBar4 = new VerticalProgressBar();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.verticalProgressBar3 = new VerticalProgressBar();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.verticalProgressBar2 = new VerticalProgressBar();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.xMotor1 = new System.Windows.Forms.GroupBox();
+            this.verticalProgressBar1 = new VerticalProgressBar();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.verticalProgressBar4 = new VerticalProgressBar();
-            this.verticalProgressBar3 = new VerticalProgressBar();
-            this.verticalProgressBar2 = new VerticalProgressBar();
-            this.verticalProgressBar1 = new VerticalProgressBar();
-            this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -67,22 +62,16 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // groupBox2
+            // cbBlocked
             // 
-            this.groupBox2.Controls.Add(this.groupBox4);
-            this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Controls.Add(this.groupBox1);
-            this.groupBox2.Controls.Add(this.xMotor1);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(38, 57);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(437, 391);
-            this.groupBox2.TabIndex = 8;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "DriveTrain";
+            this.cbBlocked.AutoSize = true;
+            this.cbBlocked.Location = new System.Drawing.Point(250, 28);
+            this.cbBlocked.Name = "cbBlocked";
+            this.cbBlocked.Size = new System.Drawing.Size(135, 17);
+            this.cbBlocked.TabIndex = 9;
+            this.cbBlocked.Text = "Detect Obsticle in Path";
+            this.cbBlocked.UseVisualStyleBackColor = true;
+            this.cbBlocked.CheckedChanged += new System.EventHandler(this.cbBlocked_CheckedChanged);
             // 
             // groupBox4
             // 
@@ -90,12 +79,20 @@
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.textBox3);
-            this.groupBox4.Location = new System.Drawing.Point(141, 201);
+            this.groupBox4.Location = new System.Drawing.Point(133, 194);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(101, 165);
-            this.groupBox4.TabIndex = 15;
+            this.groupBox4.TabIndex = 19;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Motor4";
+            // 
+            // verticalProgressBar4
+            // 
+            this.verticalProgressBar4.Location = new System.Drawing.Point(67, 20);
+            this.verticalProgressBar4.Name = "verticalProgressBar4";
+            this.verticalProgressBar4.Size = new System.Drawing.Size(26, 93);
+            this.verticalProgressBar4.TabIndex = 8;
+            this.verticalProgressBar4.Value = 10;
             // 
             // label7
             // 
@@ -128,12 +125,20 @@
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.textBox1);
-            this.groupBox3.Location = new System.Drawing.Point(20, 201);
+            this.groupBox3.Location = new System.Drawing.Point(12, 194);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(101, 165);
-            this.groupBox3.TabIndex = 14;
+            this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Motor3";
+            // 
+            // verticalProgressBar3
+            // 
+            this.verticalProgressBar3.Location = new System.Drawing.Point(67, 20);
+            this.verticalProgressBar3.Name = "verticalProgressBar3";
+            this.verticalProgressBar3.Size = new System.Drawing.Size(26, 93);
+            this.verticalProgressBar3.TabIndex = 8;
+            this.verticalProgressBar3.Value = 10;
             // 
             // label5
             // 
@@ -166,12 +171,20 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Location = new System.Drawing.Point(141, 19);
+            this.groupBox1.Location = new System.Drawing.Point(133, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(101, 165);
-            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Motor2";
+            // 
+            // verticalProgressBar2
+            // 
+            this.verticalProgressBar2.Location = new System.Drawing.Point(67, 20);
+            this.verticalProgressBar2.Name = "verticalProgressBar2";
+            this.verticalProgressBar2.Size = new System.Drawing.Size(26, 93);
+            this.verticalProgressBar2.TabIndex = 9;
+            this.verticalProgressBar2.Value = 10;
             // 
             // label3
             // 
@@ -204,12 +217,20 @@
             this.xMotor1.Controls.Add(this.label2);
             this.xMotor1.Controls.Add(this.label1);
             this.xMotor1.Controls.Add(this.textBox2);
-            this.xMotor1.Location = new System.Drawing.Point(20, 19);
+            this.xMotor1.Location = new System.Drawing.Point(12, 12);
             this.xMotor1.Name = "xMotor1";
             this.xMotor1.Size = new System.Drawing.Size(101, 165);
-            this.xMotor1.TabIndex = 12;
+            this.xMotor1.TabIndex = 16;
             this.xMotor1.TabStop = false;
             this.xMotor1.Text = "Motor1";
+            // 
+            // verticalProgressBar1
+            // 
+            this.verticalProgressBar1.Location = new System.Drawing.Point(67, 20);
+            this.verticalProgressBar1.Name = "verticalProgressBar1";
+            this.verticalProgressBar1.Size = new System.Drawing.Size(26, 93);
+            this.verticalProgressBar1.TabIndex = 8;
+            this.verticalProgressBar1.Value = 10;
             // 
             // label2
             // 
@@ -236,88 +257,19 @@
             this.textBox2.Size = new System.Drawing.Size(83, 20);
             this.textBox2.TabIndex = 1;
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(341, 77);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Right()";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click_1);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(341, 48);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Left()";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(341, 106);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Reverse()";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(341, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Forward()";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // verticalProgressBar4
-            // 
-            this.verticalProgressBar4.Location = new System.Drawing.Point(67, 20);
-            this.verticalProgressBar4.Name = "verticalProgressBar4";
-            this.verticalProgressBar4.Size = new System.Drawing.Size(26, 93);
-            this.verticalProgressBar4.TabIndex = 8;
-            this.verticalProgressBar4.Value = 10;
-            // 
-            // verticalProgressBar3
-            // 
-            this.verticalProgressBar3.Location = new System.Drawing.Point(67, 20);
-            this.verticalProgressBar3.Name = "verticalProgressBar3";
-            this.verticalProgressBar3.Size = new System.Drawing.Size(26, 93);
-            this.verticalProgressBar3.TabIndex = 8;
-            this.verticalProgressBar3.Value = 10;
-            // 
-            // verticalProgressBar2
-            // 
-            this.verticalProgressBar2.Location = new System.Drawing.Point(67, 20);
-            this.verticalProgressBar2.Name = "verticalProgressBar2";
-            this.verticalProgressBar2.Size = new System.Drawing.Size(26, 93);
-            this.verticalProgressBar2.TabIndex = 9;
-            this.verticalProgressBar2.Value = 10;
-            // 
-            // verticalProgressBar1
-            // 
-            this.verticalProgressBar1.Location = new System.Drawing.Point(67, 20);
-            this.verticalProgressBar1.Name = "verticalProgressBar1";
-            this.verticalProgressBar1.Size = new System.Drawing.Size(26, 93);
-            this.verticalProgressBar1.TabIndex = 8;
-            this.verticalProgressBar1.Value = 10;
-            // 
             // Emulator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 504);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(484, 368);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.xMotor1);
+            this.Controls.Add(this.cbBlocked);
             this.Name = "Emulator";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.groupBox2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -327,13 +279,14 @@
             this.xMotor1.ResumeLayout(false);
             this.xMotor1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.CheckBox cbBlocked;
         private System.Windows.Forms.GroupBox groupBox4;
         private VerticalProgressBar verticalProgressBar4;
         private System.Windows.Forms.Label label7;
@@ -354,9 +307,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
     }
 }

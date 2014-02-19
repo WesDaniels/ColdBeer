@@ -55,6 +55,7 @@ namespace CoolBeer.Emulator.PingList_Test
             Thread.Sleep(2);
             pingList.Add(DateTime.Now.Ticks);
 
+            Thread.Sleep(10);
             Console.WriteLine(pingList.ToBinary(0));
 
             Assert.AreEqual(pingList.ToBinary(0), "0121");

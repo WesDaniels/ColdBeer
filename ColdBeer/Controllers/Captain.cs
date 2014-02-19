@@ -21,10 +21,12 @@ namespace ColdBeer.Controllers
             {
                 // while nothings in path drive forward
                 _driveTrain.Forward();
+                _driveTrain.Forward();
                 while (!_blocked)
                 {
                     Thread.Sleep(100);
                 }
+                _driveTrain.Reverse();
                 _driveTrain.Reverse();
 
                 // while somethings in path, turn

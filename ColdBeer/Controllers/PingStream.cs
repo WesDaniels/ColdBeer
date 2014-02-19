@@ -3,7 +3,6 @@ using Microsoft.SPOT;
 using ColdBeer.Components.Ping;
 using System.Collections;
 using ColdBeer.Classes;
-using ColdBeer.Utilities;
 using System.Threading;
 using ColdBeer.Enums;
 using System;
@@ -15,7 +14,7 @@ namespace ColdBeer.Controllers
     {
         private IPing _ping;
 
-        public PingList PingList = new PingList();
+        public IPingList PingList = new PingList();
 
         /// <summary>
         /// Negotiates between sending and receiving pings

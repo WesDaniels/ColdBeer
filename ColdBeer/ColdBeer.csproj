@@ -39,6 +39,7 @@
     <Compile Include="Components\Motor\Motor.cs" />
     <Compile Include="Components\Ping\HC_SR04.cs" />
     <Compile Include="Components\Ping\Ping.cs" />
+    <Compile Include="Components\Servo\IServo.cs" />
     <Compile Include="Components\Servo\Servo.cs" />
     <Compile Include="Controllers\Captain.cs" />
     <Compile Include="Controllers\DriveTrain.cs" />

@@ -16,10 +16,10 @@ namespace ColdBeer
     {
         public static void Main()
         {
-            Motor motorFL = new Motor();
-            Motor motorFR = new Motor();
-            Motor motorBL = new Motor();
-            Motor motorBR = new Motor();
+            IMotor motorFL = new Motor();
+            IMotor motorFR = new Motor();
+            IMotor motorBL = new Motor();
+            IMotor motorBR = new Motor();
 
             motorFL.Connect(Pins.GPIO_PIN_D7, Pins.GPIO_PIN_D4, PWMChannels.PWM_PIN_D6);
             motorFR.Connect(Pins.GPIO_PIN_D7, Pins.GPIO_PIN_D4, PWMChannels.PWM_PIN_D6);
@@ -29,7 +29,7 @@ namespace ColdBeer
             DriveTrain driveTrain = new DriveTrain();
             driveTrain.ConnectFour(motorFL,motorFR,motorBL,motorBR);
 
-            Ping ping = new Ping();
+            IPing ping = new Ping();
             ping.Connect(Pins.GPIO_PIN_D1,Pins.GPIO_PIN_D2);
 
             PingStream pingStream = new PingStream(ping);
