@@ -9,34 +9,48 @@ using SecretLabs.NETMF.Hardware.Netduino;
 using ColdBeer.Controllers;
 using ColdBeer.Components.Motor;
 using ColdBeer.Components.Ping;
+using ColdBeer.Controllers.DriveTrain;
+using ColdBeer.Controllers.RedStream;
+using ColdBeer.Components.Red;
 
 namespace ColdBeer
 {
     public class Program
     {
-        public static void Main()
+        private static IDriveTrain DriveTrain()
         {
             IMotor motorL = new Motor();
             IMotor motorR = new Motor();
 
             motorL.Connect(Pins.GPIO_PIN_D7, Pins.GPIO_PIN_D4, PWMChannels.PWM_PIN_D6);
             motorR.Connect(Pins.GPIO_PIN_D2, Pins.GPIO_PIN_D3, PWMChannels.PWM_PIN_D5);
-            
+
             DriveTrain driveTrain = new DriveTrain();
-            driveTrain.ConnectFour(motorL,motorR);
+            driveTrain.ConnectFour(motorL, motorR);
 
-            //IPing ping = new Ping();
-            //ping.Connect(Pins.GPIO_PIN_D1,Pins.GPIO_PIN_D2);
+            return driveTrain;
+        }
 
-            //PingStream pingStream = new PingStream(ping);
+        private static IRedStream RedStream()
+        {
+            IRed red = new Red();
+            red.Connect(Pins.GPIO_PIN_D7);
 
-            Captain captain = new Captain(driveTrain);//pingStream);
+            IRedStream redStream = new RedStream();
+            redStream.Connect(red);
+
+            return redStream;
+        }
+
+        public static void Main()
+        {
+            Captain captain = new Captain();
+
+            captain.ConnectDriveTrain(DriveTrain());
+            captain.ConnectRedStream(RedStream());
 
             // keep program running
-            while (true)
-            {
-                Thread.Sleep(5000);
-            }
+            Thread.Sleep(Timeout.Infinite);
         }
 
     }

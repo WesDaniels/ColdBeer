@@ -38,15 +38,22 @@
   <ItemGroup>
     <Compile Include="Classes\PingList\IPingList.cs" />
     <Compile Include="Classes\PingList\PingList.cs" />
+    <Compile Include="Classes\RedData.cs" />
+    <Compile Include="Classes\RedDataList\RedDataList.cs" />
     <Compile Include="Components\Motor\IMotor.cs" />
     <Compile Include="Components\Ping\IPing.cs" />
     <Compile Include="Components\Motor\Motor.cs" />
     <Compile Include="Components\Ping\HC_SR04.cs" />
     <Compile Include="Components\Ping\Ping.cs" />
+    <Compile Include="Components\Red\IRed.cs" />
+    <Compile Include="Components\Red\Red.cs" />
     <Compile Include="Components\Servo\IServo.cs" />
     <Compile Include="Components\Servo\Servo.cs" />
     <Compile Include="Controllers\Captain.cs" />
-    <Compile Include="Controllers\DriveTrain.cs" />
+    <Compile Include="Controllers\DriveTrain\DriveTrain.cs" />
+    <Compile Include="Controllers\DriveTrain\IDriveTrain.cs" />
+    <Compile Include="Controllers\RedStream\IRedStream.cs" />
+    <Compile Include="Controllers\RedStream\RedStream.cs" />
     <Compile Include="Utilities\MessageFactory\MessageFactory.cs" />
     <Compile Include="Controllers\PingStream.cs" />
     <Compile Include="Controllers\ThrottledMotor.cs" />

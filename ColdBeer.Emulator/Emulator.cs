@@ -1,6 +1,7 @@
 ﻿using ColdBeer.Components.Motor;
 using ColdBeer.Components.Ping;
 using ColdBeer.Controllers;
+using ColdBeer.Controllers.DriveTrain;
 using ColdBeer.Emulator.Adapters;
 using CoolBeer.Emulator.Adapters;
 using System;
@@ -42,7 +43,10 @@ namespace CoolBeer.Emulator
             PingStream pingStream = new PingStream(ping);
             pingStream.PingList = new xPingList1();
 
-            Captain captain = new Captain(driveTrain, pingStream);
+            Captain captain = new Captain();
+
+            captain.ConnectDriveTrain(driveTrain);
+            captain.ConenctPingStream(pingStream);
         }
 
         private void timer1_Tick(object sender, EventArgs e)

@@ -1,12 +1,16 @@
 using System;
 using Microsoft.SPOT;
 using System.Threading;
+using ColdBeer.Controllers.DriveTrain;
+using ColdBeer.Components.Red;
+using ColdBeer.Controllers.RedStream;
 
 namespace ColdBeer.Controllers
 {
     public class Captain
     {
-        DriveTrain _driveTrain;
+        IDriveTrain _driveTrain;
+        IRedStream _redStream;
         PingStream _pingStream;
 
         // Obsticle detected in path?;
@@ -49,31 +53,36 @@ namespace ColdBeer.Controllers
             }
         }
 
-        /// <summary>
-        /// Captain controls the car operations
-        /// </summary>
-        /// <param name="driveTrain"></param>
-        /// <param name="pingStream"></param>
-        public Captain(DriveTrain driveTrain, PingStream pingStream = null)
+        public void ConnectDriveTrain(IDriveTrain driveTrain)
         {
             _driveTrain = driveTrain;
-            _pingStream = pingStream;
 
             ThreadStart delegateDrive = new ThreadStart(ThreadDrive);
             Thread threadDrive = new Thread(delegateDrive);
 
             // Start driving thread
             threadDrive.Start();
+        }
 
-            if (pingStream != null)
-            {
+        public void ConnectRedStream(IRedStream redStream)
+        {
+            _redStream = redStream;
+            _redStream.Command += new RedStreamReceivedEventHandler(RemoteControlCommandReceived);
+        }
 
-                ThreadStart delagateDetect = new ThreadStart(ThreadDetect);
-                Thread threadDetect = new Thread(delagateDetect);
+        private void RemoteControlCommandReceived(string data){
+            // todo: interprit data received
+        }
 
-                // Start Obsticle detection thread
-                threadDetect.Start();
-            }
+        public void ConenctPingStream(PingStream pingStream)
+        {
+            _pingStream = pingStream;
+
+            ThreadStart delagateDetect = new ThreadStart(ThreadDetect);
+            Thread threadDetect = new Thread(delagateDetect);
+
+            // Start Obsticle detection thread
+            threadDetect.Start();
         }
     }
 }

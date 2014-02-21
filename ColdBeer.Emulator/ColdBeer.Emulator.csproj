@@ -59,20 +59,41 @@
     <Compile Include="..\ColdBeer\Classes\PingList\PingList.cs">
       <Link>Links\PingList.cs</Link>
     </Compile>
+    <Compile Include="..\ColdBeer\Classes\RedData.cs">
+      <Link>Links\RedData.cs</Link>
+    </Compile>
+    <Compile Include="..\ColdBeer\Classes\RedDataList\RedDataList.cs">
+      <Link>Links\RedDataList.cs</Link>
+    </Compile>
     <Compile Include="..\ColdBeer\Components\Motor\IMotor.cs">
       <Link>Links\IMotor.cs</Link>
     </Compile>
     <Compile Include="..\ColdBeer\Components\Ping\IPing.cs">
       <Link>Links\IPing.cs</Link>
     </Compile>
+    <Compile Include="..\ColdBeer\Components\Red\IRed.cs">
+      <Link>Links\IRed.cs</Link>
+    </Compile>
+    <Compile Include="..\ColdBeer\Components\Red\Red.cs">
+      <Link>Links\Red.cs</Link>
+    </Compile>
     <Compile Include="..\ColdBeer\Controllers\Captain.cs">
       <Link>Links\Captain.cs</Link>
     </Compile>
-    <Compile Include="..\ColdBeer\Controllers\DriveTrain.cs">
+    <Compile Include="..\ColdBeer\Controllers\DriveTrain\DriveTrain.cs">
       <Link>Links\DriveTrain.cs</Link>
+    </Compile>
+    <Compile Include="..\ColdBeer\Controllers\DriveTrain\IDriveTrain.cs">
+      <Link>Links\IDriveTrain.cs</Link>
     </Compile>
     <Compile Include="..\ColdBeer\Controllers\PingStream.cs">
       <Link>Links\PingStream.cs</Link>
+    </Compile>
+    <Compile Include="..\ColdBeer\Controllers\RedStream\IRedStream.cs">
+      <Link>Links\IRedStream.cs</Link>
+    </Compile>
+    <Compile Include="..\ColdBeer\Controllers\RedStream\RedStream.cs">
+      <Link>Links\RedStream.cs</Link>
     </Compile>
     <Compile Include="..\ColdBeer\Controllers\ThrottledMotor.cs">
       <Link>Links\ThrottledMotor.cs</Link>

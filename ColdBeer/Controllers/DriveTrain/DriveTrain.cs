@@ -2,9 +2,9 @@ using System;
 using Microsoft.SPOT;
 using ColdBeer.Components.Motor;
 
-namespace ColdBeer.Controllers
+namespace ColdBeer.Controllers.DriveTrain
 {
-    public class DriveTrain
+    public class DriveTrain : IDriveTrain
     {
         ThrottledMotor _left;
         ThrottledMotor _right;

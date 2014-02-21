@@ -1,6 +1,3 @@
-using System;
-using Microsoft.SPOT;
-
 namespace ColdBeer.Classes.PingList
 {
     public interface IPingList
