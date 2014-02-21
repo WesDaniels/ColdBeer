@@ -21,12 +21,10 @@ namespace ColdBeer.Controllers
             {
                 // while nothings in path drive forward
                 _driveTrain.Forward();
-                _driveTrain.Forward();
                 while (!_blocked)
                 {
                     Thread.Sleep(100);
                 }
-                _driveTrain.Reverse();
                 _driveTrain.Reverse();
 
                 // while somethings in path, turn
@@ -56,7 +54,7 @@ namespace ColdBeer.Controllers
         /// </summary>
         /// <param name="driveTrain"></param>
         /// <param name="pingStream"></param>
-        public Captain(DriveTrain driveTrain, PingStream pingStream)
+        public Captain(DriveTrain driveTrain, PingStream pingStream = null)
         {
             _driveTrain = driveTrain;
             _pingStream = pingStream;
@@ -67,11 +65,15 @@ namespace ColdBeer.Controllers
             // Start driving thread
             threadDrive.Start();
 
-            ThreadStart delagateDetect = new ThreadStart(ThreadDetect);
-            Thread threadDetect = new Thread(delagateDetect);
+            if (pingStream != null)
+            {
 
-            // Start Obsticle detection thread
-            threadDetect.Start();
+                ThreadStart delagateDetect = new ThreadStart(ThreadDetect);
+                Thread threadDetect = new Thread(delagateDetect);
+
+                // Start Obsticle detection thread
+                threadDetect.Start();
+            }
         }
     }
 }

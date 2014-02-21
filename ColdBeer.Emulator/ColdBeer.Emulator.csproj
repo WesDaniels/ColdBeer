@@ -84,8 +84,6 @@
     <Compile Include="Adapters\xPingList1.cs" />
     <Compile Include="Adapters\xMotor1.cs" />
     <Compile Include="Adapters\xMotor2.cs" />
-    <Compile Include="Adapters\xMotor3.cs" />
-    <Compile Include="Adapters\xMotor4.cs" />
     <Compile Include="Adapters\xServo1.cs" />
     <Compile Include="Emulator.cs">
       <SubType>Form</SubType>
